@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./backend
+    container_name: websocket-backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/usr/src/app #volumesでホスト側のソースコードとContainer内のコードを同期
+      - /usr/src/app/node_modules
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: websocket-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/usr/src/app #volumesでホスト側のコードとContainer内のコードを同期
+    restart: always
