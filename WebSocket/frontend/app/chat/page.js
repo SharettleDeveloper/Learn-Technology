@@ -35,10 +35,10 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-100 p-4">
-        <div className="max-w-xl mx-auto bg-white p-4 shadow rounded">
+      <div className="min-h-screen bg-gray-100 p-2">
+        <div className=" mx-auto bg-white p-4 shadow rounded">
           <h1 className="text-2xl mb-4 text-black">WebSocket チャット</h1>
-          <div className="border p-2 h-64 overflow-y-scroll mb-4 text-black">
+          <div className="border p-2 h-30 overflow-y-scroll mb-4 text-black">
             {messages.map((msg, idx) => (
               <div key={idx} className="mb-2">
                 {msg}

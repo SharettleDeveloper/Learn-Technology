@@ -6,7 +6,7 @@ services:
       - "3001:3001"
     volumes:
       - ./backend:/usr/src/app #volumesでホスト側のソースコードとContainer内のコードを同期
-      - /usr/src/app/node_modules
+      # - /usr/src/app/node_modules #重要
     restart: always
 
   frontend:
@@ -16,4 +16,5 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/usr/src/app #volumesでホスト側のコードとContainer内のコードを同期
+      # - /usr/src/app/node_modules #build時にnodemodule を作成し、それをローカルで作って上書きされないようにする。
     restart: always
